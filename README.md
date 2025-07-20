@@ -102,9 +102,3 @@ Each concept is stored in a `.py` file with a **strict 5-section format**:
 | 31  | Design Patterns in Python                    |
 
 ---
-
-## 💡 How to Use
-
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/your-username/python-knowledge-base.git 
