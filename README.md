@@ -12,3 +12,7 @@ Each concept is stored in a `.py` file with a **strict 5-section format**:
 ---
 
 ## 📁 Folder Structure
+python-knowledge/
+├── basics/ # Beginner-level topics
+├── intermediate/ # Intermediate-level topics
+└── advanced/ # Advanced-level topics
