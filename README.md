@@ -102,3 +102,4 @@ Each concept is stored in a `.py` file with a **strict 5-section format**:
 | 31  | Design Patterns in Python                    |
 
 ---
+
