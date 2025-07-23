@@ -1,24 +1,21 @@
 """
 1. Definition:  
-Functions that modify other functions 
+Functions that yield values one-by-one 
 2. Why Use:  
-Add reusable behavior like logging or access control 
+Process large datasets without loading everything in memory
 """
 
-def require_login(func):
-    def wrapper(user):
-        if user not in ["Aashay", "Priyanka", "Vansh"]:
-            raise ValueError(f"{user} not authorized")
-        return func(user)
-    return wrapper
+def student_attendance():
+    students = ["Piyush", "Disha", "Apurv"]
+    for student in students:
+        yield f"{student} - Present"
 
-@require_login
-def view_profile(user):
-    return f"{user}'s profile"
-
-print(view_profile("Aashay")) 
-
+for record in student_attendance():
+   print(record)
+    
 """
 Output:
-Aashay's profile
+Piyush - Present  
+Disha - Present  
+Apurv - Present  
 """
