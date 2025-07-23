@@ -1,0 +1,14 @@
+1. Definition:  
+Isolated Python environments.  
+2. Why Use:  
+Manage dependencies per project.
+
+Commands:
+# Create
+python -m venv myenv
+
+# Activate (Linux/Mac)
+source myenv/bin/activate
+
+# Activate (Windows)
+myenv\Scripts\activate
