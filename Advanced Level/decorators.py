@@ -1,24 +1,24 @@
 """
 1. Definition:  
-Functions that modify other functions without changing their code  
+Functions that modify other functions  
 2. Why Use:  
-To add reusable functionality like logging or timing 
+Add reusable behavior like logging or access control 
 """
 
-def log_calls(func):
-    def wrapper(*args):
-        print(f"Calling {func.__name__}")
-        return func(*args)
+def require_login(func):
+    def wrapper(user):
+        if user not in ["Aashay", "Priyanka", "Vansh"]:
+            raise ValueError(f"{user} not authorized")
+        return func(user)
     return wrapper
 
-@log_calls
-def add(a, b):
-    return a + b
+@require_login
+def view_profile(user):
+    return f"{user}'s profile"
 
-print(add(2, 3))
+print(view_profile("Aashay"))  
 
 """
 Output:
-Calling add
-5
+Aashay's profile
 """
