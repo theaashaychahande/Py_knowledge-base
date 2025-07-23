@@ -1,21 +1,24 @@
 """
 1. Definition:  
-Functions that yield values one at a time
+Functions that modify other functions 
 2. Why Use:  
-Memory-efficient iteration over large datasets  
+Add reusable behavior like logging or access control 
 """
 
-def countdown(n):
-    while n > 0:
-        yield n
-        n -= 1
+def require_login(func):
+    def wrapper(user):
+        if user not in ["Aashay", "Priyanka", "Vansh"]:
+            raise ValueError(f"{user} not authorized")
+        return func(user)
+    return wrapper
 
-for num in countdown(3):
-    print(num)
+@require_login
+def view_profile(user):
+    return f"{user}'s profile"
+
+print(view_profile("Aashay")) 
 
 """
 Output:
-3
-2
-1
+Aashay's profile
 """
