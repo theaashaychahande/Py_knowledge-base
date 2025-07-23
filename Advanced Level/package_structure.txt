@@ -1,0 +1,4 @@
+my_package/
+├── __init__.py
+├── math_utils.py   # Contains: def square(n): return n*n
+└── main.py         # Usage: from math_utils import square
